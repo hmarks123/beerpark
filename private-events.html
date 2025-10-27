@@ -30,8 +30,8 @@
   box-sizing: border-box;
 }
 
-html {
-  scroll-behavior: smooth;
+#event-form {
+  scroll-margin-top: 80px;
 }
 
 body {
@@ -1445,6 +1445,28 @@ body.sidebar-open .hamburger-btn .bar:nth-child(3) {
     grid-template-columns: 1fr;
   }
 
+  .virtual-tour-section {
+    padding: 4rem 1.5rem;
+  }
+
+  .tour-container {
+    margin-top: 2rem;
+    border-radius: 8px;
+  }
+
+  .tour-container iframe {
+    height: 300px;
+  }
+
+  .event-form-section {
+    padding: 4rem 1.5rem;
+  }
+
+  .form-container {
+    padding: 2rem 1.5rem;
+    margin-top: 2rem;
+  }
+
   .contact-split {
     flex-direction: column;
   }
@@ -1484,6 +1506,23 @@ body.sidebar-open .hamburger-btn .bar:nth-child(3) {
 
   .section {
     padding: 3rem 1.5rem;
+  }
+
+  .virtual-tour-section {
+    padding: 3rem 1rem;
+  }
+
+  .tour-container iframe {
+    height: 250px;
+  }
+
+  .event-form-section {
+    padding: 3rem 1rem;
+  }
+
+  .form-container {
+    padding: 1.5rem 1rem;
+    margin-top: 1.5rem;
   }
 }
 
@@ -1538,7 +1577,7 @@ body.sidebar-open .hamburger-btn .bar:nth-child(3) {
         <h1 class="hero-title">ELEVATE YOUR EVENT</h1>
         <p class="hero-subtitle">Vegas' most spectacular rooftop venue. Under the Eiffel Tower, overlooking the Bellagio Fountains. From intimate dinners to grand receptions, create unforgettable moments on the Strip.</p>
         <div class="hero-ctas">
-          <a href="#contact" class="hero-cta">GET STARTED</a>
+          <a href="#event-form" class="hero-cta">GET STARTED</a>
         </div>
       </div>
     </section>
@@ -1685,7 +1724,7 @@ body.sidebar-open .hamburger-btn .bar:nth-child(3) {
     </section>
 
     <!-- EVENT INQUIRY FORM -->
-    <section class="event-form-section">
+    <section class="event-form-section" id="event-form">
       <div class="container">
         <div class="section-header">
           <div class="section-eyebrow">GET STARTED</div>
