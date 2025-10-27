@@ -217,10 +217,11 @@ img {
   background-color: var(--text-light);
   margin: 5px 0;
   transition: 0.3s;
+  border-radius: 2px;
 }
 
 body.sidebar-open .hamburger-btn .bar:nth-child(1) {
-  transform: rotate(-45deg) translate(-5px, 6px);
+  transform: rotate(-45deg) translateY(8px);
 }
 
 body.sidebar-open .hamburger-btn .bar:nth-child(2) {
@@ -228,7 +229,7 @@ body.sidebar-open .hamburger-btn .bar:nth-child(2) {
 }
 
 body.sidebar-open .hamburger-btn .bar:nth-child(3) {
-  transform: rotate(45deg) translate(-5px, -6px);
+  transform: rotate(45deg) translateY(-8px);
 }
 
 /* MAIN CONTENT */
