@@ -43,6 +43,8 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  -webkit-tap-highlight-color: rgba(191, 38, 51, 0.2);
+  -webkit-touch-callout: none;
 }
 
 ::selection {
@@ -186,6 +188,8 @@ img {
   width: 100%;
   z-index: 999;
   border-bottom: 2px solid #000;
+  min-height: 60px;
+  box-sizing: border-box;
 }
 
 .mobile-logo img {
@@ -196,7 +200,12 @@ img {
   background: none;
   border: none;
   cursor: pointer;
-  padding: 0.5rem;
+  padding: 0.75rem;
+  min-width: 44px;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .hamburger-btn .bar {
@@ -1651,8 +1660,8 @@ body.sidebar-open .hamburger-btn .bar:nth-child(3) {
 .footer-content {
   max-width: 1200px;
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  display: flex;
+  flex-direction: row;
   gap: 3rem;
   margin-bottom: 2rem;
 }
@@ -1796,7 +1805,7 @@ body.sidebar-open .hamburger-btn .bar:nth-child(3) {
   }
 
   .main-content {
-    padding-top: 66px;
+    padding-top: 76px;
   }
 
   .close-menu-btn {
