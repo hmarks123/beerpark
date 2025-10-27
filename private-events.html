@@ -908,9 +908,127 @@ body.sidebar-open .hamburger-btn .bar:nth-child(3) {
 }
 
 .form-container {
-  max-width: 800px;
+  max-width: 900px;
   margin: 0 auto;
   margin-top: 3rem;
+  background: linear-gradient(135deg, rgba(26, 26, 26, 0.95) 0%, rgba(15, 15, 15, 0.98) 100%);
+  border-radius: 16px;
+  padding: 3rem;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  position: relative;
+  overflow: hidden;
+  animation: fadeInUp 0.8s ease;
+}
+
+.form-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary-red) 0%, var(--accent-yellow) 50%, var(--primary-red) 100%);
+}
+
+.form-container center {
+  display: block;
+  width: 100%;
+}
+
+#tripleseat_link {
+  display: none !important;
+}
+
+/* Style Tripleseat form elements */
+.form-container input[type="text"],
+.form-container input[type="email"],
+.form-container input[type="tel"],
+.form-container input[type="date"],
+.form-container input[type="time"],
+.form-container select,
+.form-container textarea {
+  width: 100% !important;
+  padding: 1rem 1.25rem !important;
+  background: rgba(255, 255, 255, 0.05) !important;
+  border: 2px solid rgba(255, 255, 255, 0.2) !important;
+  border-radius: 8px !important;
+  font-size: 1rem !important;
+  font-family: var(--font-body) !important;
+  color: var(--text-light) !important;
+  transition: all 0.3s ease !important;
+  margin-bottom: 1rem !important;
+  box-sizing: border-box !important;
+}
+
+.form-container input[type="text"]:focus,
+.form-container input[type="email"]:focus,
+.form-container input[type="tel"]:focus,
+.form-container input[type="date"]:focus,
+.form-container input[type="time"]:focus,
+.form-container select:focus,
+.form-container textarea:focus {
+  outline: none !important;
+  border-color: var(--primary-red) !important;
+  box-shadow: 0 0 0 3px rgba(191, 38, 51, 0.2) !important;
+  background: rgba(255, 255, 255, 0.08) !important;
+}
+
+.form-container input[type="text"]::placeholder,
+.form-container input[type="email"]::placeholder,
+.form-container input[type="tel"]::placeholder,
+.form-container textarea::placeholder {
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+
+.form-container label {
+  display: block !important;
+  font-weight: 600 !important;
+  color: var(--text-light) !important;
+  margin-bottom: 0.5rem !important;
+  font-size: 0.95rem !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+}
+
+.form-container button[type="submit"],
+.form-container input[type="submit"] {
+  background: linear-gradient(135deg, var(--primary-red) 0%, var(--primary-red-dark) 100%) !important;
+  color: var(--text-light) !important;
+  border: none !important;
+  padding: 1.25rem 2.5rem !important;
+  border-radius: 8px !important;
+  font-size: 1.1rem !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+  width: 100% !important;
+  box-shadow: 0 4px 15px rgba(191, 38, 51, 0.3) !important;
+  font-family: var(--font-body) !important;
+}
+
+.form-container button[type="submit"]:hover,
+.form-container input[type="submit"]:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 25px rgba(191, 38, 51, 0.4) !important;
+}
+
+.form-container h1,
+.form-container h2,
+.form-container h3,
+.form-container h4,
+.form-container h5,
+.form-container h6 {
+  color: var(--text-light) !important;
+  font-family: var(--font-display) !important;
+}
+
+.form-container p {
+  color: rgba(255, 255, 255, 0.8) !important;
+  line-height: 1.6 !important;
 }
 
 .event-form {
@@ -1071,6 +1189,28 @@ body.sidebar-open .hamburger-btn .bar:nth-child(3) {
   
   .event-form-section {
     padding: 4rem 1.5rem;
+  }
+  
+  .form-container {
+    padding: 2rem 1.5rem;
+    margin-top: 2rem;
+  }
+  
+  .form-container input[type="text"],
+  .form-container input[type="email"],
+  .form-container input[type="tel"],
+  .form-container input[type="date"],
+  .form-container input[type="time"],
+  .form-container select,
+  .form-container textarea {
+    padding: 0.875rem 1rem !important;
+    font-size: 0.95rem !important;
+  }
+  
+  .form-container button[type="submit"],
+  .form-container input[type="submit"] {
+    padding: 1rem 2rem !important;
+    font-size: 1rem !important;
   }
 }
 
