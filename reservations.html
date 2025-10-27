@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>Reservations | Beer Park Las Vegas</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -44,6 +44,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
   -webkit-tap-highlight-color: rgba(191, 38, 51, 0.2);
   -webkit-touch-callout: none;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 ::selection {
@@ -904,7 +907,37 @@ body.sidebar-open .hamburger-btn .bar:nth-child(3) {
   }
 }
 
+/* MOBILE FIXES */
 @media (max-width: 1023px) {
+  * {
+    -webkit-tap-highlight-color: rgba(191, 38, 51, 0.2);
+    -webkit-touch-callout: none;
+  }
+  
+  input, textarea, select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 0;
+  }
+  
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  .site-wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .main-content {
+    flex: 1;
+    min-height: 0;
+  }
+
   .sidebar {
     position: fixed;
     transform: translateX(-100%);
