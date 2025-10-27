@@ -1,0 +1,3205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Beer Park Las Vegas | Official Brand Colors</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+/* CSS VARIABLES & RESET */
+:root {
+  --primary-red: #bf2633;
+  --primary-red-dark: #a01e2a;
+  --dark-bg: #414042;
+  --accent-yellow: #beb38f;
+  --light-bg: #ffffff;
+  --screen-bg: #1a1a1a;
+  --text-light: #ffffff;
+  --text-dark: #414042;
+  --font-display: 'Bebas Neue', sans-serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--dark-bg);
+  color: var(--text-light);
+  overflow-x: hidden;
+  font-size: 17px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background: var(--primary-red);
+  color: var(--text-light);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* LAYOUT & STRUCTURE */
+.site-wrapper {
+  display: flex;
+  position: relative;
+}
+
+/* SIDEBAR NAVIGATION (DESKTOP) */
+.sidebar {
+  background: var(--primary-red);
+  background-image: repeating-linear-gradient(45deg, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.05) 2px, transparent 2px, transparent 10px);
+  border-right: 2px solid #000;
+  color: var(--text-light);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 300px;
+  min-height: 100vh;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  z-index: 1000;
+  transition: transform 0.3s ease-in-out;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.sidebar-content {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 2rem;
+}
+
+.sidebar-logo {
+  padding: 2.5rem 1.5rem 1.5rem;
+}
+
+.sidebar-logo img {
+  height: 160px;
+}
+
+.sidebar-info {
+  text-align: center;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  padding: 0 1rem;
+}
+
+.sidebar-nav {
+  width: 100%;
+}
+
+.sidebar-nav ul {
+  list-style: none;
+  width: 100%;
+  padding: 0 1.5rem;
+}
+
+.sidebar-nav li {
+  margin-bottom: 0.75rem;
+}
+
+.sidebar-nav a {
+  display: block;
+  padding: 0.75rem 0;
+  font-size: 1.1rem;
+  color: var(--text-light);
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-align: center;
+  transition: all 0.3s;
+  position: relative;
+}
+
+.sidebar-nav a:not(.btn):hover {
+  color: var(--accent-yellow);
+}
+
+.sidebar-nav .btn {
+  background: var(--dark-bg);
+  padding: 1rem 1.25rem;
+  border: 2px solid #000;
+  border-radius: 6px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.sidebar-nav .btn:hover {
+  background: var(--accent-yellow);
+  color: var(--text-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.25);
+}
+
+.sidebar-nav .btn:focus-visible {
+  outline: 2px solid var(--accent-yellow);
+  outline-offset: 2px;
+}
+
+.sidebar-nav .btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.close-menu-btn {
+  display: none;
+}
+
+/* MOBILE HEADER */
+.mobile-header {
+  display: none;
+  background: var(--screen-bg);
+  padding: 1rem;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  border-bottom: 2px solid #000;
+}
+
+.mobile-logo img {
+  height: 40px;
+}
+
+.hamburger-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.hamburger-btn .bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: var(--text-light);
+  margin: 5px 0;
+  transition: 0.3s;
+}
+
+/* Hamburger animation */
+body.sidebar-open .hamburger-btn .bar:nth-child(1) {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+body.sidebar-open .hamburger-btn .bar:nth-child(2) {
+  opacity: 0;
+}
+
+body.sidebar-open .hamburger-btn .bar:nth-child(3) {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+
+/* MAIN CONTENT AREA */
+.main-content {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background: var(--dark-bg);
+  position: relative;
+  max-width: 100vw;
+}
+
+/* HERO */
+.hero {
+  position: relative;
+  height: 70vh;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.hero-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 120%;
+  min-height: 120%;
+  width: auto;
+  height: auto;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  filter: brightness(0.75) saturate(1.1);
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, transparent 40%, rgba(0,0,0,0.3) 100%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Bottom gradient removed for clean video */
+
+.hero-content {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  padding: 2rem;
+  color: var(--text-light);
+  transform: translateY(-12%);
+}
+
+.hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(3.5rem, 12vw, 7rem);
+  text-transform: uppercase;
+  line-height: 0.95;
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.05em;
+  text-shadow: 
+    2px 2px 0px rgba(0,0,0,0.8),
+    0 4px 30px rgba(0,0,0,0.9);
+  -webkit-text-stroke: 1px rgba(0,0,0,0.3);
+}
+
+.hero-title .highlight-text {
+  color: var(--primary-red);
+  text-shadow: 
+    2px 2px 0px rgba(0,0,0,0.8),
+    0 0 40px rgba(191, 38, 51, 0.7),
+    0 4px 30px rgba(0,0,0,0.9);
+  -webkit-text-stroke: 1px rgba(0,0,0,0.4);
+}
+
+.hero-subtitle {
+  font-size: clamp(1.1rem, 3vw, 1.4rem);
+  margin-bottom: 3rem;
+  letter-spacing: 0.1em;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.8);
+}
+
+.hero-cta {
+  background: linear-gradient(135deg, var(--primary-red) 0%, var(--primary-red-dark) 100%);
+  color: var(--text-light);
+  border: none;
+  padding: clamp(0.9rem, 2vw, 1.25rem) clamp(2rem, 4vw, 3.5rem);
+  font-size: clamp(0.9rem, 1.5vw, 1.2rem);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.1), inset 0 -1px 0 rgba(0,0,0,0.2);
+  position: relative;
+  overflow: hidden;
+  border-radius: 6px;
+}
+
+.hero-cta:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(191, 38, 51, 0.5), inset 0 1px 0 rgba(255,255,255,0.2);
+}
+
+.live-indicator {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  z-index: 3;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.pulse {
+  width: 10px;
+  height: 10px;
+  background: var(--accent-yellow);
+  border-radius: 50%;
+  animation: pulse-yellow 2s infinite;
+}
+
+@keyframes pulse-yellow {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 215, 0, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(255, 215, 0, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 215, 0, 0);
+  }
+}
+
+/* TICKER */
+.ticker {
+  border-top: 4px solid var(--primary-red);
+  border-bottom: 4px solid var(--primary-red);
+  overflow: hidden;
+  white-space: nowrap;
+  background: linear-gradient(90deg, #000 0%, #111 50%, #000 100%);
+  padding: 1rem 0;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+  position: relative;
+  z-index: 10;
+}
+
+.ticker-track {
+  display: inline-block;
+  animation: scroll 30s linear infinite;
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+.ticker span {
+  display: inline-block;
+  padding: 0 2rem;
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+  color: var(--text-light);
+}
+
+.ticker .dot {
+  color: var(--accent-yellow);
+  margin: 0 1rem;
+  font-size: 1.5rem;
+}
+
+/* SPLIT SECTION */
+.section-split {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  position: relative;
+}
+
+.split-left {
+  flex-basis: 50%;
+  flex-grow: 1;
+  background: repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(0,0,0,0.03) 10px, rgba(0,0,0,0.03) 20px), linear-gradient(135deg, #ffffff 0%, #f8f8f8 100%);
+  color: var(--text-dark);
+  padding: 6rem 5vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+
+.split-left .eyebrow {
+  color: var(--primary-red);
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  position: relative;
+  display: inline-block;
+}
+
+.split-left .eyebrow::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 50px;
+  height: 2px;
+  background: var(--accent-yellow);
+}
+
+.split-left h2 {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 7vw, 5.5rem);
+  line-height: 0.95;
+  text-transform: uppercase;
+  color: var(--primary-red);
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.05em;
+}
+
+.split-left h2 .slash-divider {
+  font-size: 1.5em;
+  color: var(--accent-yellow);
+  font-weight: 400;
+  line-height: 1;
+}
+
+.split-left p {
+  font-size: 1.35rem;
+  line-height: 1.6;
+  color: var(--text-dark);
+  max-width: 500px;
+  margin-bottom: 1.5rem;
+}
+
+.split-left .accolade {
+  font-style: italic;
+  font-weight: 700;
+  color: #555;
+  max-width: 500px;
+  margin-bottom: 3rem;
+}
+
+.split-right {
+  flex-basis: 50%;
+  flex-grow: 1;
+  background: url('https://images.squarespace-cdn.com/content/60b445f2dcfc4f2bd6e8f45e/c43dd428-74f4-44ce-ae04-e5b57cce4cf6/Beer_Park_Lifestyle_11+%281%29.jpg?content-type=image%2Fjpeg') center/cover no-repeat;
+}
+
+/* TICKET BUTTONS */
+.ticket-group {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.ticket {
+  position: relative;
+  width: 280px;
+  height: 100px;
+  border-radius: 10px;
+  padding: 1rem 2.5rem 1rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.ticket::before,
+.ticket::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--light-bg);
+  box-shadow: inset 0 0 3px rgba(0,0,0,0.2);
+}
+
+.ticket::before {
+  left: -10px;
+}
+
+.ticket::after {
+  right: -10px;
+}
+
+.ticket .label {
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  font-weight: 700;
+  opacity: 0.8;
+  text-transform: uppercase;
+}
+
+.ticket .main {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  letter-spacing: 0.04em;
+  line-height: 1;
+  margin-top: 0.25rem;
+}
+
+.ticket .serial {
+  position: absolute;
+  top: 50%;
+  right: 8px;
+  transform: translateY(-50%) rotate(90deg);
+  font-size: 0.7rem;
+  font-weight: 700;
+  opacity: 0.5;
+  letter-spacing: 0.08em;
+}
+
+.ticket.red {
+  background: repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(0,0,0,0.1) 10px, rgba(0,0,0,0.1) 11px), linear-gradient(135deg, var(--primary-red), var(--primary-red-dark));
+  color: var(--text-light);
+  border: 1px solid rgba(0,0,0,0.15);
+  box-shadow: 0 8px 20px rgba(191, 38, 51, 0.25), inset 0 1px 0 rgba(255,255,255,0.2), inset 0 -1px 0 rgba(0,0,0,0.2);
+}
+
+.ticket.white {
+  background: repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(191, 38, 51, 0.03) 10px, rgba(191, 38, 51, 0.03) 11px), linear-gradient(135deg, #ffffff, #f8f8f8);
+  color: var(--text-dark);
+  border: 1px solid rgba(191, 38, 51, 0.2);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1), inset 0 1px 0 rgba(255,255,255,0.9);
+}
+
+.ticket.white .main {
+  color: var(--primary-red);
+}
+
+.ticket:hover {
+  transform: translateY(-5px) rotate(-1deg);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+}
+
+/* SECTION DIVIDERS */
+.section-divider {
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, transparent 0%, var(--primary-red) 20%, var(--accent-yellow) 50%, var(--primary-red) 80%, transparent 100%);
+  margin: 0;
+  border: none;
+}
+
+.section-divider-alt {
+  width: 100%;
+  height: 2px;
+  background: var(--primary-red);
+  position: relative;
+  margin: 0;
+}
+
+.section-divider-alt::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100px;
+  height: 6px;
+  background: var(--accent-yellow);
+}
+
+/* SHARED STYLES */
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--primary-red);
+  margin-bottom: 1rem;
+  letter-spacing: 0.05em;
+}
+
+.section-subtitle {
+  text-align: center;
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto 4rem auto;
+  color: rgba(255,255,255,0.8);
+  letter-spacing: 0.05em;
+  line-height: 1.6;
+}
+
+/* JUMBOTRON SECTION */
+#jumbotron {
+  padding: 6rem 2rem;
+  background: repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(255, 215, 0, 0.03) 10px, rgba(255, 215, 0, 0.03) 11px), linear-gradient(180deg, rgb(75, 74, 76) 0%, rgb(65, 64, 66) 100%);
+  position: relative;
+}
+
+.jumbotron-screen {
+  max-width: 1100px;
+  height: 760px;
+  margin: 0 auto;
+  background: #0a0a0a;
+  border: 20px solid #1a1a1a;
+  box-shadow: 
+    0 0 0 4px #333,
+    0 0 0 8px #222,
+    0 30px 80px rgba(0,0,0,0.9),
+    0 0 60px rgba(191, 38, 51, 0.25),
+    inset 0 0 30px rgba(0,0,0,0.6),
+    inset 0 8px 15px rgba(0,0,0,0.5);
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+/* LED Screen Grid Effect - Very subtle */
+.jumbotron-screen::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: 
+    repeating-linear-gradient(0deg, transparent 0px, rgba(0,0,0,0.05) 1px, transparent 2px),
+    repeating-linear-gradient(90deg, transparent 0px, rgba(0,0,0,0.05) 1px, transparent 2px);
+  background-size: 5px 5px;
+  pointer-events: none;
+  z-index: 11;
+  opacity: 0.1;
+}
+
+/* Scanline Effect - Very subtle */
+.jumbotron-screen::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0,0,0,0.05) 0px,
+    transparent 1px,
+    transparent 4px,
+    rgba(0,0,0,0.05) 5px
+  );
+  pointer-events: none;
+  z-index: 10;
+  animation: scanline 15s linear infinite;
+  opacity: 0.3;
+}
+
+@keyframes scanline {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(10px);
+  }
+}
+
+.jumbotron-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: 
+    linear-gradient(180deg, #1a1a1a 0%, #0a0a0a 100%);
+  padding: 0.75rem 1.25rem;
+  border-bottom: 2px solid #333;
+  box-shadow: 
+    0 2px 10px rgba(0,0,0,0.5),
+    inset 0 1px 0 rgba(255,255,255,0.05);
+  position: relative;
+  z-index: 12;
+}
+
+.jumbotron-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.6), transparent);
+}
+
+.jumbotron-header-title {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.jumbotron-header-title h2 {
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: #fff;
+  font-weight: 900;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.4);
+}
+
+.jumbotron-header-title .live-dot {
+  width: 16px;
+  height: 16px;
+  background-color: var(--primary-red);
+  border-radius: 50%;
+  animation: pulse-red 2s infinite;
+  box-shadow: 
+    0 0 10px rgba(191, 38, 51, 0.8),
+    0 0 20px rgba(191, 38, 51, 0.4),
+    inset 0 -2px 4px rgba(0,0,0,0.2);
+}
+
+@keyframes pulse-white {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+  }
+}
+
+@keyframes pulse-red {
+  0% {
+    box-shadow: 0 0 0 0 rgba(191, 38, 51, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(191, 38, 51, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(191, 38, 51, 0);
+  }
+}
+
+#live-clock {
+  font-size: 1.3rem;
+  font-weight: 900;
+  color: #fff;
+  font-family: 'Courier New', Courier, monospace;
+  background: rgba(0,0,0,0.3);
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  border: 2px solid rgba(0,0,0,0.4);
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.4);
+  letter-spacing: 0.1em;
+}
+
+.jumbotron-nav {
+  display: flex;
+  background: linear-gradient(180deg, #111 0%, #000 100%);
+  border-bottom: 3px solid #333;
+  position: relative;
+  box-shadow: 
+    0 2px 10px rgba(0,0,0,0.5),
+    inset 0 1px 0 rgba(255,255,255,0.05);
+}
+
+.jumbotron-nav::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 4px;
+  width: 50%;
+  background: linear-gradient(90deg, #DC143C, #B22222);
+  box-shadow: 
+    0 0 15px rgba(191, 38, 51, 0.9),
+    0 0 30px rgba(191, 38, 51, 0.6),
+    0 -2px 10px rgba(191, 38, 51, 0.7);
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.jumbotron-nav.tab-1-active::after {
+  transform: translateX(0);
+}
+
+.jumbotron-nav.tab-2-active::after {
+  transform: translateX(100%);
+}
+
+.jumbotron-tab {
+  flex: 1;
+  background: rgba(191, 38, 51, 0.2);
+  border: none;
+  color: rgba(255,255,255,0.6);
+  padding: 1.75rem 1.5rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  position: relative;
+  z-index: 1;
+}
+
+.jumbotron-tab:not(:last-child) {
+  border-right: 2px solid #222;
+}
+
+.jumbotron-tab:hover {
+  color: rgba(255,255,255,0.8);
+  background: rgba(255,255,255,0.08);
+  text-shadow: 0 0 10px rgba(255,255,255,0.3);
+}
+
+.jumbotron-tab.active {
+  color: #fff;
+  background: linear-gradient(135deg, var(--primary-red), var(--primary-red-dark));
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.jumbotron-tab svg {
+  width: 22px;
+  height: 22px;
+  fill: currentColor;
+}
+
+.jumbotron-content-wrapper {
+  padding: 3rem 4rem;
+  background: #000;
+  color: var(--text-light);
+  flex-grow: 1;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: inset 0 10px 20px rgba(0,0,0,0.5);
+  min-height: 450px;
+  height: 450px;
+}
+
+.jumbotron-content-wrapper::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: 
+    radial-gradient(circle at 30% 30%, rgba(191, 38, 51, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 70% 70%, rgba(191, 38, 51, 0.03) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.jumbotron-content {
+  display: none;
+  animation: slideInFade 0.6s ease-out;
+  position: relative;
+  z-index: 12;
+}
+
+.jumbotron-content.active {
+  display: block;
+}
+
+@keyframes slideInFade {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hours-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.hours-list .hour-item {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  background: rgba(191,38,51,0.15);
+  border: 2px solid rgba(191,38,51,0.3);
+  border-left: 5px solid var(--primary-red);
+  gap: 0.5rem;
+}
+
+.hours-list .hour-item .day {
+  font-weight: 900;
+  font-size: 1.1rem;
+  color: var(--primary-red);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.hours-list .hour-item .time {
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: #fff;
+  letter-spacing: 0.02em;
+}
+
+.hours-note {
+  background: rgba(255,255,255,0.1);
+  border: 2px solid rgba(255,255,255,0.2);
+  padding: 1.25rem 1.5rem;
+  margin-top: 0.5rem;
+  font-size: 1.1rem;
+  color: rgba(255,255,255,0.95);
+  line-height: 1.5;
+  text-align: center;
+  font-weight: 600;
+}
+
+.location-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.location-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.location-content p {
+  font-size: 1.15rem;
+  line-height: 1.6;
+  margin-bottom: 0;
+  color: rgba(255,255,255,0.95);
+  text-align: left;
+}
+
+.location-content p strong {
+  display: block;
+  font-size: 1.5rem;
+  color: #fff;
+  margin-bottom: 0.75rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.map-container {
+  overflow: hidden;
+  border-radius: 0;
+  border: 4px solid var(--primary-red);
+  box-shadow: 0 0 20px rgba(191,38,51,0.4);
+  aspect-ratio: 1 / 1;
+}
+
+.map-container iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+  filter: invert(90%) hue-rotate(180deg) brightness(1.2);
+}
+
+.event-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.event-list .event-item {
+  padding: 2rem;
+  background: linear-gradient(135deg, rgba(191,38,51,0.2) 0%, rgba(191,38,51,0.1) 100%);
+  border: 3px solid rgba(191,38,51,0.4);
+  border-left: 6px solid var(--primary-red);
+}
+
+.event-date {
+  font-weight: 900;
+  font-size: 0.95rem;
+  color: #FF6B6B;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+
+.event-title {
+  font-size: 1.6rem;
+  font-weight: 900;
+  margin: 0 0 1rem 0;
+  color: #fff;
+  line-height: 1.2;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.event-desc {
+  color: rgba(255,255,255,0.95);
+  line-height: 1.6;
+  font-size: 1.15rem;
+  font-weight: 500;
+}
+
+/* Elfsight Events Widget */
+.elfsight-app-73b87e87-1039-44d1-87fa-370c67f5a931 {
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+}
+
+#events .jumbotron-content {
+  height: 100%;
+}
+
+.jumbotron-ticker {
+  background: linear-gradient(180deg, #000 0%, #0a0a0a 100%);
+  border-top: 4px solid #DC143C;
+  padding: clamp(0.55rem, 1.5vw, 0.8rem) 0;
+  overflow: hidden;
+  white-space: nowrap;
+  box-shadow: 
+    0 -2px 10px rgba(191, 38, 51, 0.4),
+    inset 0 4px 10px rgba(0,0,0,0.8);
+  position: relative;
+}
+
+.jumbotron-ticker::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(191, 38, 51, 0.8), transparent);
+}
+
+.jumbotron-ticker-track {
+  display: inline-block;
+  animation: jumbotronScroll 40s linear infinite;
+}
+
+@keyframes jumbotronScroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.jumbotron-ticker-track span {
+  display: inline-block;
+  padding: 0 clamp(0.75rem, 2vw, 1.5rem);
+  color: #DC143C;
+  font-size: clamp(0.75rem, 1.5vw, 1.05rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  text-shadow: 
+    0 0 10px rgba(191, 38, 51, 0.7),
+    0 0 20px rgba(191, 38, 51, 0.4);
+}
+
+.jumbotron-ticker .divider {
+  color: #DC143C;
+  text-shadow: 
+    0 0 12px rgba(191, 38, 51, 0.9),
+    0 0 20px rgba(191, 38, 51, 0.5);
+  font-size: clamp(0.85rem, 1.8vw, 1.2rem);
+}
+
+/* SPORTS SCHEDULE SECTION */
+#sports-schedule {
+  background: linear-gradient(180deg, #fafafa 0%, #ffffff 50%, #fafafa 100%);
+  padding: 6rem 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+#sports-schedule .section-title {
+  color: var(--primary-red);
+  position: relative;
+  z-index: 1;
+}
+
+#sports-schedule .section-subtitle {
+  color: var(--text-dark);
+  opacity: 0.8;
+}
+
+.schedule-embed-wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 
+    0 30px 80px rgba(0,0,0,0.3),
+    0 0 0 4px var(--primary-red),
+    0 0 0 8px rgba(191, 38, 51, 0.3),
+    0 0 40px rgba(191, 38, 51, 0.5);
+  background: white;
+  transform: translateY(0);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.schedule-embed-wrapper:hover {
+  transform: translateY(-5px);
+  box-shadow: 
+    0 35px 90px rgba(0,0,0,0.4),
+    0 0 0 4px var(--primary-red),
+    0 0 0 8px rgba(191, 38, 51, 0.4),
+    0 0 50px rgba(191, 38, 51, 0.6);
+}
+
+.schedule-embed-wrapper iframe {
+  display: block;
+  width: 100%;
+  height: 500px;
+  border: none;
+  background: white;
+}
+
+/* MENU SECTION */
+.menu-section {
+  padding: 8rem 0;
+  position: relative;
+  background: linear-gradient(135deg, var(--primary-red-dark) 0%, var(--primary-red) 100%);
+}
+
+.menu-grid {
+  margin-top: 4rem;
+}
+
+.menu-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  min-height: 500px;
+}
+
+.menu-text {
+  background: var(--light-bg);
+  padding: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.menu-label {
+  color: var(--accent-yellow);
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.menu-text h2 {
+  color: var(--text-dark);
+  font-size: 3rem;
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.05em;
+}
+
+.menu-text p {
+  color: var(--text-dark);
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 2.5rem;
+}
+
+.menu-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.btn-primary,
+.btn-secondary {
+  padding: 1rem 2rem;
+  text-decoration: none;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: all 0.3s ease;
+  display: inline-block;
+  border: 2px solid;
+}
+
+.btn-primary {
+  background: var(--primary-red);
+  color: white;
+  border-color: var(--primary-red);
+}
+
+.btn-primary:hover {
+  background: var(--primary-red-dark);
+  transform: translateY(-2px);
+}
+
+.menu-image {
+  position: relative;
+  overflow: hidden;
+}
+
+.menu-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.menu-section .section-title {
+  color: var(--text-light);
+}
+
+.menu-section .section-subtitle {
+  color: rgba(255,255,255,0.9);
+}
+
+/* BEER SELECTION SECTION (MARQUEE) */
+.beer-section {
+  background: var(--dark-bg) url('https://www.toptal.com/designers/subtlepatterns/uploads/dark-wood.png');
+  padding: 6rem 0;
+  position: relative;
+}
+
+.beer-section .container {
+  max-width: 1400px;
+}
+
+.beer-section .section-title {
+  color: var(--text-light);
+  margin-bottom: 1rem;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
+
+.beer-section .section-subtitle {
+  color: var(--accent-yellow);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 3rem;
+}
+
+.beer-marquee-wrapper {
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  padding: 1rem 0;
+}
+
+.featured-beers-container {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll 60s linear infinite;
+}
+
+/* Removed hover pause so beer animation continues */
+
+@keyframes marquee-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.beer-card {
+  background: rgba(26, 26, 26, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 2rem;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  flex-shrink: 0;
+  width: 300px;
+  margin: 0 1rem;
+}
+
+.beer-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+}
+
+.card-glass-visual {
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  margin-bottom: 1.5rem;
+}
+
+.beer-glass {
+  width: 50px;
+  height: 80px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 2px 2px 20px 20px / 2px 2px 15px 15px;
+  position: relative;
+  border: 1px solid rgba(255,255,255,0.2);
+  border-top: none;
+}
+
+.beer-liquid {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 85%;
+  border-radius: 0 0 19px 19px / 0 0 14px 14px;
+}
+
+.beer-liquid.ipa {
+  background: linear-gradient(to top, #e67e22, #f39c12);
+}
+
+.beer-liquid.stout {
+  background: linear-gradient(to top, #2C1810, #4A2C17);
+}
+
+.beer-liquid.hefeweizen {
+  background: linear-gradient(to top, #f1c40f, #f4d03f);
+}
+
+.beer-liquid.hazy-ipa {
+  background: linear-gradient(to top, #f39c12, #f1c40f);
+}
+
+.beer-liquid.lager {
+  background: linear-gradient(to top, #f9d423, #fce566);
+}
+
+.beer-liquid.amber {
+  background: linear-gradient(to top, #c0392b, #e74c3c);
+}
+
+.beer-foam {
+  position: absolute;
+  top: -12px;
+  left: -1px;
+  right: -1px;
+  height: 14px;
+  background: #fff;
+  border-radius: 6px 6px 0 0;
+}
+
+.card-beer-name {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  color: var(--text-light);
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+}
+
+.card-beer-brewery {
+  font-size: 0.9rem;
+  color: var(--accent-yellow);
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  margin-bottom: 1rem;
+}
+
+.card-beer-details {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.detail-item {
+  color: rgba(255,255,255,0.8);
+  font-size: 0.9rem;
+}
+
+.detail-item span {
+  display: block;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--text-light);
+}
+
+.beer-list-cta-container {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+/* PRIVATE EVENTS FEATURE SECTION */
+#private-events-feature {
+  background: rgb(55, 54, 56);
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
+  min-height: 600px;
+}
+
+.events-feature-image {
+  flex-basis: 50%;
+  flex-grow: 1;
+  min-height: 600px;
+  background: url('https://images.squarespace-cdn.com/content/60b445f2dcfc4f2bd6e8f45e/38b9fc75-6a15-4704-8f4a-9736a353262d/Beer_Park_Lifestyle_30+%281%29.jpg?content-type=image%2Fjpeg') center/cover no-repeat;
+  clip-path: polygon(0 0, 100% 0, 85% 100%, 0% 100%);
+  position: relative;
+}
+
+.events-feature-image::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+}
+
+.events-feature-text {
+  flex-basis: 50%;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 5rem 5vw 5rem 3rem;
+  background: transparent;
+  position: relative;
+}
+
+.events-feature-text .eyebrow {
+  color: var(--primary-red);
+  font-size: 0.9rem;
+  letter-spacing: 0.2em;
+  font-weight: 900;
+  margin-bottom: 1.5rem;
+  display: inline-block;
+  text-transform: uppercase;
+  position: relative;
+}
+
+.events-feature-text .section-title {
+  text-align: left;
+  color: var(--text-light);
+  line-height: 1.1;
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  margin-bottom: 2.5rem;
+  letter-spacing: 0.04em;
+}
+
+.events-feature-text p {
+  color: rgba(255,255,255,0.9);
+  line-height: 1.7;
+  font-size: 1.15rem;
+  margin-bottom: 1.5rem;
+  max-width: 550px;
+}
+
+.events-feature-text p:last-of-type {
+  margin-bottom: 3rem;
+  font-weight: 700;
+  color: rgba(255,255,255,0.95);
+  font-size: 1rem;
+  padding: 1.25rem 1.5rem;
+  background: rgba(191,38,51,0.2);
+  border-left: 3px solid var(--primary-red);
+  letter-spacing: 0.05em;
+}
+
+/* INSTAGRAM FEATURE SECTION */
+.instagram-section {
+  background: var(--dark-bg);
+  padding: 6rem 2rem;
+  text-align: center;
+}
+
+.instagram-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  color: var(--text-light);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 3rem;
+}
+
+.instagram-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  max-width: 900px;
+  margin: 0 auto 3rem auto;
+}
+
+.instagram-post {
+  background-color: #2a2a2a;
+  aspect-ratio: 1 / 1;
+}
+
+.instagram-cta {
+  background: var(--primary-red);
+  color: var(--text-light);
+  border: none;
+  padding: clamp(0.8rem, 1.5vw, 1rem) clamp(1.75rem, 3vw, 2.5rem);
+  font-size: clamp(0.9rem, 1.2vw, 1rem);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-block;
+  border-radius: 6px;
+}
+
+.instagram-cta:hover {
+  background: var(--primary-red-dark);
+  transform: translateY(-3px);
+}
+
+/* NEWSLETTER SIGNUP SECTION */
+#newsletter {
+  background: repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(0,0,0,0.03) 10px, rgba(0,0,0,0.03) 20px), linear-gradient(135deg, #ffffff 0%, #f8f8f8 100%);
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
+}
+
+.newsletter-image {
+  flex-basis: 50%;
+  flex-grow: 1;
+  min-height: 500px;
+  background: url('https://images.squarespace-cdn.com/content/60b445f2dcfc4f2bd6e8f45e/1519ad93-0339-4218-adca-24f9404c506f/Beer_Park_Lifestyle_45+%281%29.jpg?content-type=image%2Fjpeg') center/cover no-repeat;
+  clip-path: polygon(0 0, 100% 0, 85% 100%, 0% 100%);
+}
+
+.newsletter-content {
+  flex-basis: 50%;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 4rem 5vw 4rem 2rem;
+  color: var(--text-dark);
+}
+
+.newsletter-content h2 {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 7vw, 5rem);
+  line-height: 1;
+  color: var(--primary-red);
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.newsletter-content p {
+  font-size: 1.1rem;
+  max-width: 450px;
+  margin-bottom: 2rem;
+}
+
+.newsletter-form {
+  display: flex;
+  max-width: 450px;
+  border: 2px solid var(--text-dark);
+}
+
+.newsletter-form input {
+  flex-grow: 1;
+  padding: 1rem;
+  border: none;
+  font-size: 1rem;
+  background: transparent;
+}
+
+.newsletter-form input:focus {
+  outline: 2px solid var(--primary-red);
+  outline-offset: -2px;
+}
+
+.newsletter-form button {
+  background: var(--primary-red);
+  color: var(--text-light);
+  border: none;
+  padding: clamp(0.8rem, 1.5vw, 1rem) clamp(1.5rem, 3vw, 2rem);
+  font-size: clamp(0.9rem, 1.2vw, 1rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.newsletter-form button:hover {
+  background: var(--primary-red-dark);
+}
+
+/* FOOTER */
+.site-footer {
+  background: #1a1a1a;
+  padding: 4rem 2rem 2rem;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 3rem;
+  margin-bottom: 2rem;
+}
+
+.footer-section {
+  text-align: left;
+}
+
+.footer-title {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  color: var(--accent-yellow);
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.footer-subtitle {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  color: white;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.footer-location {
+  color: rgba(255,255,255,0.9);
+}
+
+.location-title {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  color: var(--accent-yellow);
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.location-venue {
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.location-address {
+  line-height: 1.6;
+  margin-bottom: 0.5rem;
+}
+
+.location-phone {
+  font-weight: 600;
+  color: var(--accent-yellow);
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-link {
+  color: rgba(255,255,255,0.8);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+  color: var(--accent-yellow);
+}
+
+.socials {
+  display: flex;
+  gap: 1rem;
+}
+
+.socials a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.socials a:hover {
+  background: var(--primary-red);
+  transform: translateY(-2px);
+}
+
+.socials svg {
+  width: 20px;
+  height: 20px;
+  fill: var(--text-light);
+  transition: all 0.3s ease;
+}
+
+.socials a:hover svg {
+  fill: var(--text-light);
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding-top: 2rem;
+  text-align: center;
+}
+
+.footer-copyright {
+  color: rgba(255,255,255,0.6);
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+/* RESPONSIVE STYLES */
+@media (max-width: 1023px) {
+  .sidebar {
+    position: fixed;
+    height: 100vh;
+    transform: translateX(-100%);
+    border-right: none;
+    overflow-y: auto;
+  }
+
+  body.sidebar-open .sidebar {
+    transform: translateX(0);
+    box-shadow: 5px 0 25px rgba(0,0,0,0.5);
+  }
+
+  body.sidebar-open {
+    overflow: hidden;
+  }
+
+  .mobile-header {
+    display: flex;
+  }
+
+  .main-content {
+    padding-top: 66px;
+  }
+
+  .close-menu-btn {
+    display: block;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 10;
+  }
+
+  .close-menu-btn svg {
+    width: 30px;
+    height: 30px;
+    fill: var(--text-light);
+  }
+
+  .sidebar-content {
+    padding-bottom: 2rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .section-split {
+    flex-direction: column;
+  }
+
+  .split-left,
+  .split-right {
+    flex-basis: auto;
+    width: 100%;
+  }
+
+  .split-left {
+    padding: 4rem 2rem;
+  }
+
+  .ticket-group {
+    justify-content: center;
+  }
+
+  .events-feature-image {
+    display: none;
+  }
+
+  .events-feature-text {
+    flex-basis: 100%;
+    padding: 4rem 2rem;
+  }
+
+  .events-feature-text .section-title,
+  .events-feature-text p {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .events-feature-text .eyebrow {
+    text-align: center;
+  }
+
+  .newsletter-image {
+    display: none;
+  }
+
+  .newsletter-content {
+    padding-left: 5vw;
+  }
+
+  /* Jumbotron ticker scaling */
+  .jumbotron-ticker {
+    padding: 0.75rem 0;
+    border-top: 3px solid #DC143C;
+  }
+
+  .jumbotron-ticker-track span {
+    font-size: 1rem;
+    padding: 0 1.4rem;
+  }
+
+  .jumbotron-ticker .divider {
+    font-size: 1.15rem;
+  }
+
+  /* Beer section scaling */
+  .beer-card {
+    width: 300px;
+    min-width: 300px;
+  }
+
+  /* Split section already has padding rule above */
+  .split-left h2 {
+    font-size: clamp(2.75rem, 6vw, 3.75rem);
+  }
+
+  .split-left p {
+    font-size: 1.4rem;
+  }
+
+  /* Menu section scaling */
+  .menu-text h2 {
+    font-size: clamp(2.75rem, 6vw, 3.75rem);
+  }
+
+  .menu-text p {
+    font-size: 1.2rem;
+  }
+
+  /* Newsletter section scaling */
+  .newsletter-content h2 {
+    font-size: clamp(3.5rem, 7vw, 4.5rem);
+  }
+
+  .newsletter-content p {
+    font-size: 1.1rem;
+  }
+
+  /* Events section scaling */
+  .events-feature-text .section-title {
+    font-size: clamp(2.75rem, 5vw, 3.75rem);
+  }
+
+  .events-feature-text p {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .jumbotron-screen {
+    height: 710px;
+    min-height: 710px;
+  }
+
+  .jumbotron-content-wrapper {
+    height: 450px;
+    min-height: 450px;
+    padding: 2.5rem 3rem;
+  }
+
+  .jumbotron-ticker {
+    padding: 0.7rem 0;
+    border-top: 3px solid #DC143C;
+  }
+
+  .jumbotron-ticker-track span {
+    font-size: 0.95rem;
+    padding: 0 1.25rem;
+  }
+
+  .jumbotron-ticker .divider {
+    font-size: 1.1rem;
+  }
+
+  .hours-list {
+    gap: 1.25rem;
+  }
+
+  .location-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .location-content p {
+    text-align: center;
+  }
+
+  .jumbotron-nav {
+    flex-wrap: wrap;
+  }
+
+  .jumbotron-tab {
+    flex-basis: 50%;
+  }
+
+  /* Beer section scaling */
+  .beer-card {
+    width: 280px;
+    min-width: 280px;
+  }
+
+  .beer-card h3 {
+    font-size: 1.5rem;
+  }
+
+  /* Split section scaling */
+  .split-left {
+    padding: 4rem 2.5rem;
+  }
+
+  .split-left h2 {
+    font-size: clamp(2.5rem, 6vw, 3.5rem);
+  }
+
+  .split-left p {
+    font-size: 1.35rem;
+  }
+
+  /* Menu section scaling */
+  .menu-text {
+    padding: 3rem 2.5rem;
+  }
+
+  .menu-text h2 {
+    font-size: clamp(2.5rem, 6vw, 3.5rem);
+  }
+
+  .menu-text p {
+    font-size: 1.15rem;
+  }
+
+  /* Section padding */
+  .beer-section,
+  .menu-section,
+  #sports-schedule,
+  #private-events-feature,
+  #newsletter {
+    padding: 5rem 2rem;
+  }
+
+  /* Events section scaling */
+  .events-feature-text {
+    padding: 3.5rem 2.5rem;
+  }
+
+  .events-feature-text .section-title {
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+  }
+
+  /* Newsletter section scaling */
+  .newsletter-content {
+    padding: 3.5rem 2.5rem;
+  }
+
+  .newsletter-content h2 {
+    font-size: clamp(3rem, 6vw, 4rem);
+  }
+
+  .newsletter-content p {
+    font-size: 1.05rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .instagram-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .jumbotron-nav {
+    flex-direction: row;
+  }
+
+  .jumbotron-tab {
+    font-size: 0.85rem;
+    padding: 1rem 0.75rem;
+  }
+
+  .jumbotron-tab svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .jumbotron-screen {
+    height: 610px;
+    min-height: 610px;
+    border-width: 10px;
+  }
+
+  .jumbotron-content-wrapper {
+    padding: 1.25rem;
+    height: 350px;
+    min-height: 350px;
+  }
+
+  .jumbotron-ticker {
+    padding: 0.65rem 0;
+    border-top: 3px solid #DC143C;
+  }
+
+  .jumbotron-ticker-track span {
+    font-size: 0.85rem;
+    padding: 0 1rem;
+  }
+
+  .jumbotron-ticker .divider {
+    font-size: 1rem;
+  }
+
+  .hours-list {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .hours-list .hour-item {
+    padding: 1rem;
+    font-size: 0.95rem;
+  }
+
+  .hours-list .hour-item .time {
+    font-size: 1.2rem;
+  }
+
+  .hours-note {
+    font-size: 0.9rem;
+    padding: 0.85rem 1rem;
+  }
+
+  /* Split section scaling */
+  .split-left {
+    padding: 3rem 1.75rem;
+  }
+
+  .split-left h2 {
+    font-size: clamp(2.75rem, 7vw, 3.75rem);
+  }
+
+  .split-left p {
+    font-size: 1.3rem;
+    line-height: 1.5;
+  }
+
+  .location-content {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .location-content p {
+    font-size: 1rem;
+  }
+
+  .location-content p strong {
+    font-size: 1.3rem;
+  }
+
+  .event-list .event-item {
+    padding: 1.5rem;
+  }
+
+  .event-title {
+    font-size: 1.3rem;
+  }
+
+  .event-desc {
+    font-size: 1rem;
+  }
+
+  .location-content p {
+    text-align: center;
+  }
+
+  .event-list .event-item {
+    padding: 1.5rem;
+  }
+
+  .menu-content {
+    grid-template-columns: 1fr;
+  }
+
+  .menu-image {
+    aspect-ratio: 4/3;
+  }
+
+  /* Beer section scaling */
+  .beer-card {
+    width: 260px;
+    min-width: 260px;
+  }
+
+  .beer-card h3 {
+    font-size: 1.4rem;
+  }
+
+  .beer-card .beer-type {
+    font-size: 0.8rem;
+  }
+
+  .beer-card .beer-details {
+    font-size: 0.9rem;
+  }
+
+  /* Split section scaling */
+  .split-left {
+    padding: 3.5rem 2rem;
+  }
+
+  .split-left h2 {
+    font-size: clamp(2.25rem, 6vw, 3.25rem);
+  }
+
+  .split-left p {
+    font-size: 1.25rem;
+  }
+
+  /* Menu section scaling */
+  .menu-text {
+    padding: 3rem 2rem;
+  }
+
+  .menu-text h2 {
+    font-size: clamp(2.25rem, 6vw, 3.25rem);
+  }
+
+  .menu-text p {
+    font-size: 1.1rem;
+  }
+
+  .menu-cta {
+    padding: 1rem 2.25rem;
+    font-size: 1rem;
+  }
+
+  /* Section padding */
+  .beer-section,
+  .menu-section,
+  #sports-schedule,
+  #private-events-feature,
+  #newsletter {
+    padding: 4.5rem 1.5rem;
+  }
+
+  /* Upcoming events scaling */
+  #upcoming-events {
+    padding: 4.5rem 1.5rem !important;
+  }
+
+  #upcoming-events .section-title {
+    font-size: clamp(2.25rem, 5vw, 3.25rem);
+  }
+
+  /* Events section scaling */
+  .events-feature-text {
+    padding: 3rem 2rem;
+  }
+
+  .events-feature-text .section-title {
+    font-size: clamp(2.25rem, 5vw, 3.25rem);
+  }
+
+  .events-feature-text p {
+    font-size: 1.1rem;
+  }
+
+  .events-cta {
+    padding: 1rem 2.25rem;
+    font-size: 1rem;
+  }
+
+  /* Newsletter section scaling */
+  .newsletter-content {
+    padding: 3rem 2rem;
+  }
+
+  .newsletter-content h2 {
+    font-size: clamp(2.5rem, 6vw, 3.75rem);
+  }
+
+  .newsletter-content p {
+    font-size: 1.05rem;
+  }
+
+  .newsletter-form input {
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
+  }
+
+  .newsletter-form button {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+  }
+
+  /* Instagram section scaling */
+  .instagram-grid {
+    gap: 1rem;
+  }
+
+  .instagram-cta {
+    padding: 1rem 2.25rem;
+    font-size: 1rem;
+  }
+
+  /* Footer scaling */
+  footer {
+    padding: 3rem 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .site-wrapper {
+    flex-direction: row;
+  }
+
+  .mobile-header {
+    display: none;
+  }
+
+  .main-content {
+    padding-top: 0;
+  }
+
+  .sidebar {
+    transform: translateX(0);
+    position: sticky;
+  }
+}
+
+/* Small mobile devices (below 480px) */
+@media (max-width: 480px) {
+  body {
+    font-size: 15px;
+  }
+
+  .hero-cta {
+    padding: 0.95rem 2rem;
+    font-size: 0.95rem;
+  }
+
+  .ticket {
+    width: 100%;
+    max-width: 280px;
+    height: auto;
+    padding: 0.8rem 1.75rem 0.8rem 0.9rem;
+  }
+
+  .ticket .main {
+    font-size: 1.3rem;
+  }
+
+  .ticket .label {
+    font-size: 0.65rem;
+  }
+
+  .ticket-group {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.85rem;
+  }
+
+  .beer-card {
+    width: 240px;
+    min-width: 240px;
+  }
+
+  .split-left h2 {
+    font-size: clamp(2.5rem, 8vw, 3.5rem);
+  }
+
+  .split-left p {
+    font-size: 1.25rem;
+    line-height: 1.5;
+  }
+
+  .section-title {
+    font-size: clamp(1.75rem, 5vw, 2.5rem);
+  }
+
+  .section-subtitle {
+    font-size: 0.95rem;
+  }
+
+  .jumbotron-header {
+    padding: 0.6rem 1rem;
+  }
+
+  .jumbotron-header-title h2 {
+    font-size: 0.85rem;
+  }
+
+  #live-clock {
+    font-size: 1.1rem;
+  }
+
+  .jumbotron-tab {
+    font-size: 0.8rem;
+    padding: 0.9rem 0.6rem;
+  }
+
+  .jumbotron-tab svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  .jumbotron-screen {
+    border-width: 8px;
+    height: 580px;
+    min-height: 580px;
+  }
+
+  .jumbotron-content-wrapper {
+    padding: 1rem;
+    height: 340px;
+    min-height: 340px;
+  }
+
+  .hours-list {
+    grid-template-columns: 1fr;
+    gap: 0.6rem;
+  }
+
+  .hours-list .hour-item {
+    padding: 0.85rem;
+  }
+
+  .hours-list .hour-item .day {
+    font-size: 0.9rem;
+  }
+
+  .hours-list .hour-item .time {
+    font-size: 1.1rem;
+  }
+
+  .jumbotron-ticker {
+    padding: 0.6rem 0;
+    border-top: 2px solid #DC143C;
+  }
+
+  .jumbotron-ticker-track span {
+    font-size: 0.85rem;
+    padding: 0 0.9rem;
+    letter-spacing: 0.06em;
+  }
+
+  .jumbotron-ticker .divider {
+    font-size: 0.95rem;
+  }
+
+  .schedule-embed-wrapper iframe {
+    height: 400px;
+  }
+
+  #jumbotron,
+  .beer-section,
+  .menu-section,
+  #sports-schedule,
+  #private-events-feature,
+  #newsletter {
+    padding: 4rem 1rem;
+  }
+
+  .events-feature-text {
+    padding: 2.5rem 1.25rem;
+  }
+
+  .newsletter-content {
+    padding: 2.5rem 1.25rem;
+  }
+
+  /* Beer section scaling */
+  .beer-card h3 {
+    font-size: 1.3rem;
+  }
+
+  .beer-card .beer-type {
+    font-size: 0.75rem;
+  }
+
+  .beer-card .beer-details {
+    font-size: 0.85rem;
+  }
+
+  .beer-card .abv, .beer-card .ibu {
+    font-size: 0.8rem;
+  }
+
+  /* Split section scaling */
+  .split-section {
+    min-height: auto;
+  }
+
+  .split-left, .split-right {
+    min-height: 400px;
+  }
+
+  .split-left {
+    padding: 3rem 1.5rem;
+  }
+
+  /* Menu section scaling */
+  .menu-layout {
+    flex-direction: column;
+  }
+
+  .menu-text {
+    padding: 2.5rem 1.5rem;
+  }
+
+  .menu-text h2 {
+    font-size: clamp(2rem, 6vw, 2.75rem);
+  }
+
+  .menu-text p {
+    font-size: 1.05rem;
+  }
+
+  .menu-cta {
+    padding: 0.9rem 2rem;
+    font-size: 0.9rem;
+  }
+
+  /* Upcoming events scaling */
+  #upcoming-events {
+    padding: 4rem 1.25rem !important;
+  }
+
+  #upcoming-events .section-title {
+    font-size: clamp(2rem, 5vw, 3rem);
+  }
+
+  /* Private events section scaling */
+  .events-feature-text .section-title {
+    font-size: clamp(2rem, 5vw, 3rem);
+  }
+
+  .events-feature-text p {
+    font-size: 1.05rem;
+  }
+
+  .events-cta {
+    padding: 0.9rem 2rem;
+    font-size: 0.9rem;
+  }
+
+  /* Newsletter section scaling */
+  .newsletter-content h2 {
+    font-size: clamp(2.25rem, 6vw, 3.5rem);
+  }
+
+  .newsletter-content p {
+    font-size: 1rem;
+  }
+
+  .newsletter-form {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .newsletter-form input {
+    padding: 0.9rem 1.25rem;
+    font-size: 0.95rem;
+  }
+
+  .newsletter-form button {
+    padding: 0.9rem 1.75rem;
+    font-size: 0.95rem;
+  }
+
+  /* Instagram section scaling */
+  .instagram-grid {
+    gap: 0.75rem;
+  }
+
+  .instagram-cta {
+    padding: 0.9rem 2rem;
+    font-size: 0.9rem;
+  }
+
+  /* Footer scaling */
+  footer {
+    padding: 2.5rem 1.25rem;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .footer-links {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+}
+
+/* Extra small devices (below 360px) */
+@media (max-width: 360px) {
+  body {
+    font-size: 14px;
+  }
+
+  .sidebar {
+    width: 280px;
+  }
+
+  .hero {
+    min-height: 400px;
+    height: 60vh;
+  }
+
+  .hero-cta {
+    padding: 0.9rem 1.75rem;
+    font-size: 0.9rem;
+  }
+
+  .ticket {
+    max-width: 260px;
+    padding: 0.75rem 1.4rem 0.75rem 0.85rem;
+  }
+
+  .ticket .main {
+    font-size: 1.1rem;
+  }
+
+  .ticket .label {
+    font-size: 0.6rem;
+  }
+
+  .beer-card {
+    width: 200px;
+    min-width: 200px;
+    padding: 1.25rem;
+  }
+
+  .jumbotron-header {
+    padding: 0.5rem 0.75rem;
+  }
+
+  .jumbotron-header-title h2 {
+    font-size: 0.75rem;
+  }
+
+  #live-clock {
+    font-size: 0.95rem;
+  }
+
+  .jumbotron-tab {
+    padding: 0.85rem 0.5rem;
+    font-size: 0.75rem;
+  }
+
+  .jumbotron-tab svg {
+    width: 13px;
+    height: 13px;
+  }
+
+  .jumbotron-screen {
+    height: 540px;
+    min-height: 540px;
+  }
+
+  .jumbotron-content-wrapper {
+    padding: 0.85rem;
+    height: 320px;
+    min-height: 320px;
+  }
+
+  .jumbotron-ticker {
+    padding: 0.55rem 0;
+    border-top: 2px solid #DC143C;
+  }
+
+  .jumbotron-ticker-track span {
+    font-size: 0.75rem;
+    padding: 0 0.75rem;
+    letter-spacing: 0.05em;
+  }
+
+  .jumbotron-ticker .divider {
+    font-size: 0.85rem;
+  }
+
+  .split-left p {
+    font-size: 1rem;
+  }
+
+  .section-title {
+    font-size: clamp(1.5rem, 5vw, 2.25rem);
+  }
+
+  .section-subtitle {
+    font-size: 0.85rem;
+  }
+
+  #jumbotron,
+  .beer-section,
+  .menu-section,
+  #sports-schedule {
+    padding: 3rem 0.75rem;
+  }
+
+  /* Beer section scaling */
+  .beer-card h3 {
+    font-size: 1.2rem;
+  }
+
+  .beer-card .beer-type {
+    font-size: 0.7rem;
+  }
+
+  .beer-card .beer-details {
+    font-size: 0.8rem;
+  }
+
+  .beer-card .abv, .beer-card .ibu {
+    font-size: 0.75rem;
+  }
+
+  /* Split section scaling */
+  .split-left {
+    padding: 2.5rem 1.25rem;
+  }
+
+  .split-left h2 {
+    font-size: clamp(2.25rem, 8vw, 3rem);
+  }
+
+  .split-left p {
+    font-size: 1.15rem;
+    line-height: 1.5;
+  }
+
+  /* Menu section scaling */
+  .menu-text {
+    padding: 2.25rem 1.25rem;
+  }
+
+  .menu-text h2 {
+    font-size: clamp(1.75rem, 6vw, 2.5rem);
+  }
+
+  .menu-text p {
+    font-size: 1rem;
+  }
+
+  .menu-cta {
+    padding: 0.8rem 1.75rem;
+    font-size: 0.85rem;
+  }
+
+  /* Upcoming events scaling */
+  #upcoming-events {
+    padding: 3.5rem 1rem !important;
+  }
+
+  #upcoming-events .section-title {
+    font-size: clamp(1.75rem, 5vw, 2.5rem);
+  }
+
+  /* Private events section scaling */
+  #private-events-feature {
+    padding: 3.5rem 1rem;
+  }
+
+  .events-feature-text {
+    padding: 2.25rem 1rem;
+  }
+
+  .events-feature-text .section-title {
+    font-size: clamp(1.75rem, 5vw, 2.5rem);
+  }
+
+  .events-feature-text p {
+    font-size: 1rem;
+  }
+
+  .events-cta {
+    padding: 0.8rem 1.75rem;
+    font-size: 0.85rem;
+  }
+
+  /* Newsletter section scaling */
+  #newsletter {
+    padding: 3.5rem 1rem;
+  }
+
+  .newsletter-content {
+    padding: 2.25rem 1rem;
+  }
+
+  .newsletter-content h2 {
+    font-size: clamp(2rem, 6vw, 3rem);
+  }
+
+  .newsletter-content p {
+    font-size: 0.95rem;
+  }
+
+  .newsletter-form input {
+    padding: 0.85rem 1.1rem;
+    font-size: 0.9rem;
+  }
+
+  .newsletter-form button {
+    padding: 0.85rem 1.5rem;
+    font-size: 0.9rem;
+  }
+
+  /* Instagram section scaling */
+  .instagram-grid {
+    gap: 0.5rem;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .instagram-cta {
+    padding: 0.8rem 1.75rem;
+    font-size: 0.85rem;
+  }
+
+  /* Footer scaling */
+  footer {
+    padding: 2.25rem 1rem;
+  }
+
+  .footer-logo img {
+    height: 50px;
+  }
+
+  .footer-links a {
+    font-size: 0.9rem;
+  }
+
+  .footer-social a {
+    width: 36px;
+    height: 36px;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="site-wrapper">
+  <header class="mobile-header">
+    <a href="index.html" class="mobile-logo" aria-label="Home"><img loading="lazy" src="https://uploadthingy.s3.us-west-1.amazonaws.com/jZN7L7rXGfQnmcVSEmMgsD/Beer_Park_Logo.png" alt="Beer Park Logo"></a>
+    <button class="hamburger-btn" id="hamburger-btn" aria-label="Open Menu"><span class="bar"></span><span class="bar"></span><span class="bar"></span></button>
+  </header>
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-content">
+      <button class="close-menu-btn" id="close-menu-btn" aria-label="Close Menu">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+      </button>
+      <div class="sidebar-logo"><a href="index.html" aria-label="Home"><img loading="lazy" src="https://uploadthingy.s3.us-west-1.amazonaws.com/jZN7L7rXGfQnmcVSEmMgsD/Beer_Park_Logo.png" alt="Beer Park Logo"></a></div>
+      <div class="sidebar-info"><p>3655 S Las Vegas Blvd<br>Las Vegas, NV 89109<br>(702) 331-5100</p></div>
+      <nav class="sidebar-nav">
+        <ul>
+          <li><a href="reservations.html" class="btn">RESERVATIONS</a></li>
+          <li><a href="menu.html">MENUS</a></li>
+          <li><a href="events.html">EVENTS</a></li>
+          <li><a href="private-events.html">PRIVATE EVENTS</a></li>
+          <li><a href="visit.html">VISIT</a></li>
+        </ul>
+      </nav>
+    </div>
+  </aside>
+
+  <main class="main-content">
+    <section class="hero">
+      <video class="hero-video" autoplay muted loop playsinline>
+        <source src="https://static1.squarespace.com/static/60b445f2dcfc4f2bd6e8f45e/t/68e7ba3886857830e6097c22/1760016957241/BEERPARK+%282%29.mp4" type="video/mp4">
+      </video>
+    </section>
+
+    <div class="ticker">
+      <div class="ticker-track">
+        <span>ROOFTOP VIEWS</span><span class="dot">•</span><span>OVER 100 BEERS</span><span class="dot">•</span><span>WATCH EVERY GAME</span><span class="dot">•</span><span>PRIVATE EVENTS</span><span class="dot">•</span><span>LIVE FROM LAS VEGAS</span><span class="dot">•</span><span>ROOFTOP VIEWS</span><span class="dot">•</span><span>OVER 100 BEERS</span><span class="dot">•</span><span>WATCH EVERY GAME</span><span class="dot">•</span><span>PRIVATE EVENTS</span><span class="dot">•</span><span>LIVE FROM LAS VEGAS</span><span class="dot">•</span>
+      </div>
+    </div>
+
+    <section class="section-split">
+      <div class="split-left">
+        <span class="eyebrow">BEER PARK LAS VEGAS</span>
+        <h2>GAME DAY<br>EVERY DAY</h2>
+        <p>Vegas' ultimate rooftop sports bar. 100+ beers on tap, 75+ HD screens, and unbeatable Strip views. Every game. Every day.</p>
+        <p class="accolade">Named one of the "Best Rooftop Bars" on the Las Vegas Strip by Thrillist.</p>
+        <div class="ticket-group">
+          <a href="reservations.html" class="ticket red"><span class="label">ADMIT ONE</span><span class="main">RESERVATIONS</span><span class="serial">NO 5533</span></a>
+          <a href="menu.html" class="ticket white"><span class="label">VIP ACCESS</span><span class="main">VIEW MENUS</span><span class="serial">NO MENU-B</span></a>
+        </div>
+      </div>
+      <div class="split-right"></div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <section id="jumbotron">
+      <div class="jumbotron-screen">
+        <header class="jumbotron-header">
+          <div class="jumbotron-header-title"><span class="live-dot"></span><h2>BEER PARK LIVE INFO</h2></div>
+          <div id="live-clock"></div>
+        </header>
+        <nav class="jumbotron-nav tab-1-active">
+          <button class="jumbotron-tab active" data-tab="hours"><svg viewBox="0 0 24 24"><path d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm0 18c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8-3.589 8-8 8z"/><path d="M13 7h-2v5.414l3.293 3.293 1.414-1.414L13 11.586z"/></svg><span>Hours</span></button>
+          <button class="jumbotron-tab" data-tab="location"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg><span>Location</span></button>
+        </nav>
+        <div class="jumbotron-content-wrapper">
+          <div id="hours" class="jumbotron-content active">
+            <div class="hours-list">
+              <div class="hour-item"><span class="day">Monday - Thursday</span><span class="time">11:00 AM - 11:00 PM</span></div>
+              <div class="hour-item"><span class="day">Friday</span><span class="time">11:00 AM - 1:00 AM</span></div>
+              <div class="hour-item"><span class="day">Saturday</span><span class="time">9:00 AM - 1:00 AM</span></div>
+              <div class="hour-item"><span class="day">Sunday</span><span class="time">9:00 AM - 11:00 PM</span></div>
+            </div>
+            <p class="hours-note">*Hours may vary during special events or holidays.</p>
+          </div>
+          <div id="location" class="jumbotron-content"><div class="location-content"><div class="location-info"><p><strong>3655 S Las Vegas Blvd, Las Vegas, NV 89109</strong></p><p>We are located at Paris Las Vegas, on a rooftop deck overlooking the world-famous Las Vegas Strip. Valet and self-parking are available through the Paris hotel garage.</p></div><div class="map-container"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3223.6558144678787!2d-115.17239768473!3d36.112190380092!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c8c430cb9de9d7%3A0x9c2b8e89b7dcba76!2sBeer%20Park!5e0!3m2!1sen!2sus!4v1636739284619!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div></div></div>
+        </div>
+        <div class="jumbotron-ticker">
+            <div class="jumbotron-ticker-track">
+                <span>FOLLOW US ON INSTAGRAM @BEERPARKLV FOR EXCLUSIVE DEALS</span>
+                <span class="divider">•</span>
+                <span>ASK YOUR SERVER ABOUT BUILDING YOUR OWN BEER FLIGHT!</span>
+                <span class="divider">•</span>
+                <span>PLANNING A PARTY? HOST IT HERE WITH THE BEST VIEW IN VEGAS!</span>
+                <span class="divider">•</span>
+                <span>TAG YOUR PHOTOS WITH #BEERPARKVEGAS FOR A CHANCE TO BE FEATURED</span>
+                <span class="divider">•</span>
+                <span>FOLLOW US ON INSTAGRAM @BEERPARKLV FOR EXCLUSIVE DEALS</span>
+                <span class="divider">•</span>
+                <span>ASK YOUR SERVER ABOUT BUILDING YOUR OWN BEER FLIGHT!</span>
+                <span class="divider">•</span>
+                <span>PLANNING A PARTY? HOST IT HERE WITH THE BEST VIEW IN VEGAS!</span>
+                <span class="divider">•</span>
+                <span>TAG YOUR PHOTOS WITH #BEERPARKVEGAS FOR A CHANCE TO BE FEATURED</span>
+            </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider-alt"></div>
+
+    <section id="sports-schedule">
+      <div class="container">
+        <h2 class="section-title">TODAY'S GAME PLAN</h2>
+        <p class="section-subtitle">Find out what's playing live at the park. We've got every major game on deck.</p>
+        <div class="schedule-embed-wrapper"><iframe src="https://www.directv.com/sports-info/embed/05577c7a-d9be-41e6-b358-51c348d0a383" frameborder="0"></iframe></div>
+      </div>
+    </section>
+    
+    <div class="section-divider"></div>
+    
+    <section id="menu" class="menu-section">
+      <div class="container">
+        <h2 class="section-title">THE GRUB & THE BREWS</h2>
+        <p class="section-subtitle">CLASSIC GAME DAY EATS AND A BEER LIST AS BIG AS THE VEGAS STRIP.</p>
+        <div class="menu-grid">
+          <div class="menu-content">
+            <div class="menu-text">
+              <span class="menu-label">THE GRUB</span>
+              <h2>FOOD THAT MATCHES THE VIEW</h2>
+              <p>Our kitchen serves up reimagined stadium favorites and classic game day eats, perfectly paired with over 100 beers and handcrafted cocktails. From giant Bavarian pretzels to loaded nachos, everything tastes better overlooking the Strip.</p>
+              <div class="menu-buttons">
+                <a href="menu.html" class="btn-primary">VIEW FULL MENU</a>
+              </div>
+            </div>
+            <div class="menu-image"><img loading="lazy" src="https://images.squarespace-cdn.com/content/60b445f2dcfc4f2bd6e8f45e/0076fc49-d2ae-4b81-9ad0-529d859e1461/Beer_Park_Lifestyle_21+%281%29.jpg?content-type=image%2Fjpeg" alt="Beer Park Food Spread"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <div class="section-divider-alt"></div>
+    
+    <section id="beer-selection" class="beer-section">
+      <div class="container">
+        <h2 class="section-title">FEATURED ON TAP</h2>
+        <p class="section-subtitle">A CURATED SELECTION OF OUR CURRENT FAVORITE POURS</p>
+      </div>
+      <div class="beer-marquee-wrapper">
+        <div class="featured-beers-container">
+                    <div class="beer-card">
+            <div class="card-glass-visual"><div class="beer-glass"><div class="beer-liquid ipa"></div><div class="beer-foam"></div></div></div>
+            <h3 class="card-beer-name">Elysian Space Dust</h3><p class="card-beer-brewery">Elysian Brewing</p>
+            <div class="card-beer-details"><div class="detail-item">Style<span>American IPA</span></div><div class="detail-item">ABV<span>8.2%</span></div></div>
+          </div>
+          <div class="beer-card">
+            <div class="card-glass-visual"><div class="beer-glass"><div class="beer-liquid stout"></div><div class="beer-foam"></div></div></div>
+            <h3 class="card-beer-name">Breakfast Stout</h3><p class="card-beer-brewery">Founders Brewing</p>
+            <div class="card-beer-details"><div class="detail-item">Style<span>Oatmeal Stout</span></div><div class="detail-item">ABV<span>8.3%</span></div></div>
+          </div>
+          <div class="beer-card">
+            <div class="card-glass-visual"><div class="beer-glass"><div class="beer-liquid hazy-ipa"></div><div class="beer-foam"></div></div></div>
+            <h3 class="card-beer-name">Love Juice</h3><p class="card-beer-brewery">Lovelady Brewing (Local)</p>
+            <div class="card-beer-details"><div class="detail-item">Style<span>Hazy IPA</span></div><div class="detail-item">ABV<span>5.5%</span></div></div>
+          </div>
+          <div class="beer-card">
+            <div class="card-glass-visual"><div class="beer-glass"><div class="beer-liquid hefeweizen"></div><div class="beer-foam"></div></div></div>
+            <h3 class="card-beer-name">Franziskaner</h3><p class="card-beer-brewery">Spaten-Franziskaner</p>
+            <div class="card-beer-details"><div class="detail-item">Style<span>Hefeweizen</span></div><div class="detail-item">ABV<span>5.0%</span></div></div>
+          </div>
+          <div class="beer-card">
+            <div class="card-glass-visual"><div class="beer-glass"><div class="beer-liquid lager"></div><div class="beer-foam"></div></div></div>
+            <h3 class="card-beer-name">Bud Light</h3><p class="card-beer-brewery">Anheuser-Busch</p>
+            <div class="card-beer-details"><div class="detail-item">Style<span>Lager</span></div><div class="detail-item">ABV<span>4.2%</span></div></div>
+          </div>
+          <div class="beer-card">
+            <div class="card-glass-visual"><div class="beer-glass"><div class="beer-liquid amber"></div><div class="beer-foam"></div></div></div>
+            <h3 class="card-beer-name">Alaskan Amber</h3><p class="card-beer-brewery">Alaskan Brewing Co.</p>
+            <div class="card-beer-details"><div class="detail-item">Style<span>Altbier</span></div><div class="detail-item">ABV<span>5.3%</span></div></div>
+          </div>
+          <div class="beer-card">
+            <div class="card-glass-visual"><div class="beer-glass"><div class="beer-liquid hazy-ipa"></div><div class="beer-foam"></div></div></div>
+            <h3 class="card-beer-name">Mango Cart</h3><p class="card-beer-brewery">Golden Road</p>
+            <div class="card-beer-details"><div class="detail-item">Style<span>Wheat Ale</span></div><div class="detail-item">ABV<span>4.0%</span></div></div>
+          </div>
+          <div class="beer-card">
+            <div class="card-glass-visual"><div class="beer-glass"><div class="beer-liquid stout"></div><div class="beer-foam"></div></div></div>
+            <h3 class="card-beer-name">Guinness Draught</h3><p class="card-beer-brewery">Guinness</p>
+            <div class="card-beer-details"><div class="detail-item">Style<span>Irish Stout</span></div><div class="detail-item">ABV<span>4.2%</span></div></div>
+          </div>
+        <div class="beer-card">
+            <div class="card-glass-visual"><div class="beer-glass"><div class="beer-liquid ipa"></div><div class="beer-foam"></div></div></div>
+            <h3 class="card-beer-name">Elysian Space Dust</h3><p class="card-beer-brewery">Elysian Brewing</p>
+            <div class="card-beer-details"><div class="detail-item">Style<span>American IPA</span></div><div class="detail-item">ABV<span>8.2%</span></div></div>
+          </div>
+          <div class="beer-card">
+            <div class="card-glass-visual"><div class="beer-glass"><div class="beer-liquid stout"></div><div class="beer-foam"></div></div></div>
+            <h3 class="card-beer-name">Breakfast Stout</h3><p class="card-beer-brewery">Founders Brewing</p>
+            <div class="card-beer-details"><div class="detail-item">Style<span>Oatmeal Stout</span></div><div class="detail-item">ABV<span>8.3%</span></div></div>
+          </div>
+          <div class="beer-card">
+            <div class="card-glass-visual"><div class="beer-glass"><div class="beer-liquid hazy-ipa"></div><div class="beer-foam"></div></div></div>
+            <h3 class="card-beer-name">Love Juice</h3><p class="card-beer-brewery">Lovelady Brewing (Local)</p>
+            <div class="card-beer-details"><div class="detail-item">Style<span>Hazy IPA</span></div><div class="detail-item">ABV<span>5.5%</span></div></div>
+          </div>
+          <div class="beer-card">
+            <div class="card-glass-visual"><div class="beer-glass"><div class="beer-liquid hefeweizen"></div><div class="beer-foam"></div></div></div>
+            <h3 class="card-beer-name">Franziskaner</h3><p class="card-beer-brewery">Spaten-Franziskaner</p>
+            <div class="card-beer-details"><div class="detail-item">Style<span>Hefeweizen</span></div><div class="detail-item">ABV<span>5.0%</span></div></div>
+          </div>
+        </div>
+      </div>
+      <div class="beer-list-cta-container">
+        <a href="menu.html" class="hero-cta">View Full Beer List</a>
+      </div>
+    </section>
+    
+    <div class="section-divider-alt"></div>
+
+    <section id="upcoming-events" style="padding: 8rem 2rem; background: linear-gradient(135deg, var(--primary-red-dark) 0%, var(--primary-red) 50%, var(--primary-red-dark) 100%); position: relative;">
+      <div style="position: absolute; inset: 0; background: repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(0,0,0,0.05) 10px, rgba(0,0,0,0.05) 20px); pointer-events: none;"></div>
+      <div class="container" style="position: relative; z-index: 1;">
+        <h2 class="section-title" style="color: var(--text-light); text-shadow: 0 2px 10px rgba(0,0,0,0.5);">UPCOMING EVENTS</h2>
+        <p class="section-subtitle" style="color: rgba(255,255,255,0.95); font-weight: 600;">See what's happening at the park.</p>
+        <div style="max-width: 1000px; margin: 0 auto 3rem auto; background: var(--dark-bg); border-radius: 0; overflow-y: auto; overflow-x: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.8), inset 0 0 40px rgba(0,0,0,0.5); height: 500px; max-height: 500px; border: 3px solid rgba(255,255,255,0.1);">
+          <div class="elfsight-app-73b87e87-1039-44d1-87fa-370c67f5a931" style="height: 100%;"></div>
+        </div>
+        <div style="text-align: center;">
+          <a href="events.html" style="display: inline-block; background: #fff; color: var(--primary-red); border: none; padding: 1.1rem 2.5rem; font-size: 1.1rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 8px 25px rgba(0,0,0,0.4); border-radius: 6px;">VIEW FULL EVENT SCHEDULE</a>
+        </div>
+      </div>
+    </section>
+    
+    <div class="section-divider-alt"></div>
+    
+    <section id="private-events-feature">
+      <div class="events-feature-image"></div>
+      <div class="events-feature-text">
+        <span class="eyebrow">UNFORGETTABLE EVENTS</span>
+        <h2 class="section-title">HOST YOUR EVENT<br>AT BEER PARK</h2>
+        <p>Our 9,000 sq ft outdoor deck has hosted ESPN's SportsCenter and national broadcasts — now imagine your event here. From corporate parties to birthday celebrations, we offer customizable packages, dedicated staff, and Vegas' most iconic rooftop setting.</p>
+        <p>Capacity: Up to 500 guests • Full A/V capabilities • Indoor & outdoor spaces available</p>
+        <a href="private-events.html" class="hero-cta">Inquire Now</a>
+      </div>
+    </section>
+    
+    <div class="section-divider"></div>
+    
+    <section id="instagram-feature" class="instagram-section">
+      <div class="container">
+        <h2 class="instagram-title">@BEERPARKLV</h2>
+        <div class="instagram-grid">
+          <div class="instagram-post"></div>
+          <div class="instagram-post"></div>
+          <div class="instagram-post"></div>
+          <div class="instagram-post"></div>
+          <div class="instagram-post"></div>
+          <div class="instagram-post"></div>
+        </div>
+        <a href="#" class="instagram-cta">FOLLOW US</a>
+      </div>
+    </section>
+
+    <section id="newsletter">
+        <div class="newsletter-image"></div>
+        <div class="newsletter-content">
+            <h2>LEVEL UP<br>YOUR GAME</h2>
+            <p>Be the first to hear about game-day specials, big-screen match lineups, exclusive events, and happy hour deals.</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="EMAIL ADDRESS">
+                <button type="submit">SIGN UP</button>
+            </form>
+        </div>
+    </section>
+        
+    <footer class="site-footer">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3 class="footer-title">Beer Park</h3>
+          <div class="footer-location">
+            <h4 class="location-title">Located at</h4>
+            <p class="location-venue">Paris Las Vegas</p>
+            <p class="location-address">3655 S Las Vegas Blvd<br>Las Vegas, NV 89109</p>
+            <p class="location-phone">(702) 331-5100</p>
+          </div>
+        </div>
+        
+        <div class="footer-section">
+          <h4 class="footer-subtitle">Legal</h4>
+          <ul class="footer-links">
+            <li><a href="#" class="footer-link">Careers</a></li>
+            <li><a href="#" class="footer-link">Terms of Use</a></li>
+            <li><a href="#" class="footer-link">Privacy Policy</a></li>
+            <li><a href="#" class="footer-link">Accessibility</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h4 class="footer-subtitle">Follow Us</h4>
+          <div class="socials">
+            <a href="#" aria-label="Facebook">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/>
+              </svg>
+            </a>
+            <a href="#" aria-label="Instagram">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+              </svg>
+            </a>
+            <a href="#" aria-label="Twitter">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+      </div>
+    </footer>
+
+  </main>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+
+  // --- MOBILE MENU LOGIC ---
+  const hamburgerBtn = document.getElementById('hamburger-btn');
+  const closeMenuBtn = document.getElementById('close-menu-btn');
+  const sidebar = document.getElementById('sidebar');
+  if (hamburgerBtn && closeMenuBtn) {
+    hamburgerBtn.addEventListener('click', () => document.body.classList.add('sidebar-open'));
+    closeMenuBtn.addEventListener('click', () => document.body.classList.remove('sidebar-open'));
+    const sidebarLinks = sidebar.querySelectorAll('a');
+    sidebarLinks.forEach(link => link.addEventListener('click', () => document.body.classList.remove('sidebar-open')));
+  }
+  
+  // --- JUMBOTRON CLOCK & AUTOSWITCHING TABS LOGIC ---
+  const liveClockElement = document.getElementById('live-clock');
+  const jumbotronNav = document.querySelector('.jumbotron-nav');
+  const jumbotronTabs = document.querySelectorAll('.jumbotron-tab');
+  const jumbotronContents = document.querySelectorAll('.jumbotron-content');
+  let jumbotronInterval;
+
+  function updateClock() {
+    if (!liveClockElement) return;
+    liveClockElement.textContent = new Date().toLocaleTimeString('en-US', { timeZone: 'America/Los_Angeles', hour: '2-digit', minute: '2-digit', hour12: true }) + ' PT';
+  }
+
+  // Function to switch to a specific tab
+  function switchJumbotronTab(tabIndex) {
+    // Update active class on tabs
+    jumbotronTabs.forEach((t, i) => t.classList.toggle('active', i === tabIndex));
+    
+    // Update active class on content panes
+    jumbotronContents.forEach((c, i) => c.classList.toggle('active', i === tabIndex));
+    
+    // Update the nav class for the indicator bar animation
+    const navClass = `tab-${tabIndex + 1}-active`;
+    jumbotronNav.classList.remove('tab-1-active', 'tab-2-active', 'tab-3-active');
+    jumbotronNav.classList.add(navClass);
+  }
+
+  // Function to start the autoswitching
+  function startJumbotronAutoswitch() {
+    let currentIndex = 0;
+    jumbotronInterval = setInterval(() => {
+      currentIndex = (currentIndex + 1) % jumbotronTabs.length;
+      switchJumbotronTab(currentIndex);
+    }, 7000); // Switch every 7 seconds
+  }
+
+  // Add click listeners to each tab
+  jumbotronTabs.forEach((tab, index) => {
+    tab.addEventListener('click', () => {
+      // Stop the autoswitching interval when a user clicks
+      clearInterval(jumbotronInterval);
+      // Switch to the clicked tab
+      switchJumbotronTab(index);
+    });
+  });
+  
+  // Initial clock update and start autoswitching
+  updateClock();
+  setInterval(updateClock, 1000);
+  startJumbotronAutoswitch();
+
+
+});
+</script>
+
+<script src="https://apps.elfsight.com/p/platform.js" defer></script>
+
+</body>
+</html>
