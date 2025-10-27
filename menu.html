@@ -34,6 +34,11 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Smooth scrolling offset for fixed navigation */
+.menu-content {
+  scroll-margin-top: 120px;
+}
+
 body {
   font-family: var(--font-body);
   background: var(--dark-bg);
@@ -417,6 +422,8 @@ body.sidebar-open .hamburger-btn .bar:nth-child(3) {
   border-radius: 6px;
   position: relative;
   overflow: hidden;
+  text-decoration: none;
+  display: inline-block;
 }
 
 .menu-nav-tab:hover {
@@ -431,6 +438,11 @@ body.sidebar-open .hamburger-btn .bar:nth-child(3) {
   border-color: transparent;
   box-shadow: 0 2px 8px rgba(211, 47, 47, 0.3);
   transform: translateY(-1px);
+}
+
+.menu-nav-tab:focus {
+  outline: 2px solid var(--accent-yellow);
+  outline-offset: 2px;
 }
 
 /* MENU CONTENT */
@@ -1033,10 +1045,10 @@ body.sidebar-open .hamburger-btn .bar:nth-child(3) {
     <nav class="menu-nav">
       <div class="menu-nav-container">
         <div class="menu-nav-tabs">
-          <button class="menu-nav-tab active" data-tab="food">Food Menu</button>
-          <button class="menu-nav-tab" data-tab="beer">Beer List</button>
-          <button class="menu-nav-tab" data-tab="cocktails">Cocktails</button>
-          <button class="menu-nav-tab" data-tab="beverages">Beverages</button>
+          <a href="#food" class="menu-nav-tab active" data-tab="food">Food Menu</a>
+          <a href="#beer" class="menu-nav-tab" data-tab="beer">Beer List</a>
+          <a href="#cocktails" class="menu-nav-tab" data-tab="cocktails">Cocktails</a>
+          <a href="#beverages" class="menu-nav-tab" data-tab="beverages">Beverages</a>
         </div>
       </div>
     </nav>
@@ -1967,23 +1979,48 @@ document.addEventListener('DOMContentLoaded', () => {
   const menuTabs = document.querySelectorAll('.menu-nav-tab');
   const menuContents = document.querySelectorAll('.menu-content');
   
+  function switchToTab(targetTab) {
+    // Remove active class from all tabs and contents
+    menuTabs.forEach(t => t.classList.remove('active'));
+    menuContents.forEach(c => c.classList.remove('active'));
+    
+    // Add active class to target tab
+    const activeTab = document.querySelector(`[data-tab="${targetTab}"]`);
+    if (activeTab) {
+      activeTab.classList.add('active');
+    }
+    
+    // Show corresponding content
+    const targetContent = document.getElementById(targetTab);
+    if (targetContent) {
+      targetContent.classList.add('active');
+    }
+  }
+  
   menuTabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-      // Remove active class from all tabs and contents
-      menuTabs.forEach(t => t.classList.remove('active'));
-      menuContents.forEach(c => c.classList.remove('active'));
-      
-      // Add active class to clicked tab
-      tab.classList.add('active');
-      
-      // Show corresponding content
+    tab.addEventListener('click', (e) => {
+      e.preventDefault();
       const targetTab = tab.getAttribute('data-tab');
-      const targetContent = document.getElementById(targetTab);
-      if (targetContent) {
-        targetContent.classList.add('active');
-      }
+      switchToTab(targetTab);
+      
+      // Update URL hash
+      window.history.pushState(null, null, `#${targetTab}`);
     });
   });
+  
+  // Handle hash navigation on page load
+  function handleHashNavigation() {
+    const hash = window.location.hash.substring(1);
+    if (hash && ['food', 'beer', 'cocktails', 'beverages'].includes(hash)) {
+      switchToTab(hash);
+    }
+  }
+  
+  // Handle browser back/forward navigation
+  window.addEventListener('popstate', handleHashNavigation);
+  
+  // Handle initial page load
+  handleHashNavigation();
 });
 </script>
 
