@@ -941,7 +941,18 @@ body.sidebar-open .hamburger-btn .bar:nth-child(3) {
   display: none !important;
 }
 
-/* Style Tripleseat form elements */
+/* Style Tripleseat form elements with extreme specificity */
+.form-container,
+.form-container *,
+.form-container div,
+.form-container form,
+.form-container input,
+.form-container textarea,
+.form-container select,
+.form-container button {
+  box-sizing: border-box !important;
+}
+
 .form-container input[type="text"],
 .form-container input[type="email"],
 .form-container input[type="tel"],
@@ -950,13 +961,19 @@ body.sidebar-open .hamburger-btn .bar:nth-child(3) {
 .form-container select,
 .form-container textarea {
   width: 100% !important;
+  max-width: 100% !important;
   padding: 1rem 1.25rem !important;
   background: rgba(255, 255, 255, 0.05) !important;
+  background-color: rgba(255, 255, 255, 0.05) !important;
   border: 2px solid rgba(255, 255, 255, 0.2) !important;
+  border-width: 2px !important;
+  border-style: solid !important;
+  border-color: rgba(255, 255, 255, 0.2) !important;
   border-radius: 8px !important;
   font-size: 1rem !important;
   font-family: var(--font-body) !important;
   color: var(--text-light) !important;
+  color: #ffffff !important;
   transition: all 0.3s ease !important;
   margin-bottom: 1rem !important;
   box-sizing: border-box !important;
@@ -1029,6 +1046,40 @@ body.sidebar-open .hamburger-btn .bar:nth-child(3) {
 .form-container p {
   color: rgba(255, 255, 255, 0.8) !important;
   line-height: 1.6 !important;
+}
+
+/* Universal overrides for any Tripleseat-added elements */
+.form-container [class*="tripleseat"],
+.form-container [id*="tripleseat"],
+.form-container form,
+.form-container fieldset,
+.form-container .form-group,
+.form-container .form-row,
+.form-container .form-field {
+  color: var(--text-light) !important;
+  background-color: transparent !important;
+  border-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+/* Force dark theme on all form elements */
+.form-container input,
+.form-container textarea,
+.form-container select {
+  -webkit-appearance: none !important;
+  -moz-appearance: none !important;
+  appearance: none !important;
+}
+
+/* Ensure labels are visible */
+.form-container label,
+.form-container .label,
+.form-container .field-label {
+  color: #ffffff !important;
+  font-weight: 600 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+  margin-bottom: 0.5rem !important;
+  display: block !important;
 }
 
 .event-form {
@@ -1865,51 +1916,75 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Event form handling
-  const eventForm = document.getElementById('eventForm');
+  // Force restyle Tripleseat form elements after they load
+  function styleTripleseatForm() {
+    const formContainer = document.querySelector('.form-container');
+    if (!formContainer) return;
+    
+    const inputs = formContainer.querySelectorAll('input, textarea, select');
+    inputs.forEach(input => {
+      if (!input.type || ['text', 'email', 'tel', 'date', 'time'].includes(input.type) || input.tagName === 'SELECT' || input.tagName === 'TEXTAREA') {
+        input.style.setProperty('background-color', 'rgba(255, 255, 255, 0.05)', 'important');
+        input.style.setProperty('color', '#ffffff', 'important');
+        input.style.setProperty('border', '2px solid rgba(255, 255, 255, 0.2)', 'important');
+        input.style.setProperty('padding', '1rem 1.25rem', 'important');
+        input.style.setProperty('border-radius', '8px', 'important');
+        input.style.setProperty('width', '100%', 'important');
+        input.style.setProperty('box-sizing', 'border-box', 'important');
+        input.style.setProperty('margin-bottom', '1rem', 'important');
+      }
+    });
+    
+    const labels = formContainer.querySelectorAll('label');
+    labels.forEach(label => {
+      label.style.setProperty('color', '#ffffff', 'important');
+      label.style.setProperty('font-weight', '600', 'important');
+      label.style.setProperty('text-transform', 'uppercase', 'important');
+      label.style.setProperty('letter-spacing', '0.05em', 'important');
+      label.style.setProperty('margin-bottom', '0.5rem', 'important');
+      label.style.setProperty('display', 'block', 'important');
+    });
+    
+    const buttons = formContainer.querySelectorAll('button[type="submit"], input[type="submit"]');
+    buttons.forEach(button => {
+      button.style.setProperty('background', 'linear-gradient(135deg, #bf2633 0%, #a01e2a 100%)', 'important');
+      button.style.setProperty('color', '#ffffff', 'important');
+      button.style.setProperty('border', 'none', 'important');
+      button.style.setProperty('padding', '1.25rem 2.5rem', 'important');
+      button.style.setProperty('border-radius', '8px', 'important');
+      button.style.setProperty('font-size', '1.1rem', 'important');
+      button.style.setProperty('font-weight', '700', 'important');
+      button.style.setProperty('text-transform', 'uppercase', 'important');
+      button.style.setProperty('letter-spacing', '0.05em', 'important');
+      button.style.setProperty('cursor', 'pointer', 'important');
+      button.style.setProperty('width', '100%', 'important');
+      button.style.setProperty('font-family', 'Inter, sans-serif', 'important');
+    });
+  }
   
-  eventForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    
-    // Get form data
-    const formData = new FormData(eventForm);
-    const data = Object.fromEntries(formData);
-    
-    // Basic validation
-    if (!data.firstName || !data.lastName || !data.email || !data.phone || !data.message) {
-      alert('Please fill in all required fields.');
-      return;
-    }
-    
-    // Email validation
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(data.email)) {
-      alert('Please enter a valid email address.');
-      return;
-    }
-    
-    // Show loading state
-    const submitBtn = eventForm.querySelector('.submit-btn');
-    const originalText = submitBtn.innerHTML;
-    submitBtn.innerHTML = '<span>Sending...</span>';
-    submitBtn.disabled = true;
-    
-    // Simulate form submission (replace with actual endpoint)
-    setTimeout(() => {
-      // Reset form
-      eventForm.reset();
-      
-      // Show success message
-      alert('Thank you! Your event inquiry has been sent. We\'ll contact you within 24 hours to discuss your event.');
-      
-      // Reset button
-      submitBtn.innerHTML = originalText;
-      submitBtn.disabled = false;
-      
-      // Scroll to top of form
-      eventForm.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }, 2000);
+  // Try to style immediately and after delays to catch the external script
+  styleTripleseatForm();
+  setTimeout(styleTripleseatForm, 500);
+  setTimeout(styleTripleseatForm, 1000);
+  setTimeout(styleTripleseatForm, 2000);
+  setTimeout(styleTripleseatForm, 3000);
+  
+  // Watch for new elements being added (e.g., from Tripleseat script)
+  const observer = new MutationObserver((mutations) => {
+    mutations.forEach((mutation) => {
+      if (mutation.addedNodes.length) {
+        styleTripleseatForm();
+      }
+    });
   });
+  
+  const formContainer = document.querySelector('.form-container');
+  if (formContainer) {
+    observer.observe(formContainer, {
+      childList: true,
+      subtree: true
+    });
+  }
 });
 </script>
 
