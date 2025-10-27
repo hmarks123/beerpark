@@ -328,6 +328,35 @@ body.sidebar-open .hamburger-btn .bar:nth-child(3) {
   margin-right: auto;
 }
 
+.hero-ctas {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.hero-cta {
+  background: linear-gradient(135deg, var(--primary-red) 0%, var(--primary-red-dark) 100%);
+  color: var(--text-light);
+  border: none;
+  padding: clamp(0.9rem, 2vw, 1.25rem) clamp(2rem, 4vw, 3.5rem);
+  font-size: clamp(0.9rem, 1.5vw, 1.2rem);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  box-shadow: 0 4px 20px rgba(191, 38, 51, 0.3);
+  border-radius: 8px;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.hero-cta:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(191, 38, 51, 0.5), inset 0 1px 0 rgba(255,255,255,0.2);
+}
+
 
 /* TICKER */
 .ticker {
@@ -1399,6 +1428,11 @@ body.sidebar-open .hamburger-btn .bar:nth-child(3) {
     font-size: clamp(2.5rem, 8vw, 4rem);
   }
 
+  .hero-cta {
+    padding: 0.95rem 2rem;
+    font-size: 0.95rem;
+  }
+
   .highlights-grid {
     grid-template-columns: 1fr;
   }
@@ -1441,6 +1475,11 @@ body.sidebar-open .hamburger-btn .bar:nth-child(3) {
 
   .hero-content {
     padding: 1.5rem;
+  }
+
+  .hero-cta {
+    padding: 0.9rem 1.75rem;
+    font-size: 0.9rem;
   }
 
   .section {
@@ -1498,6 +1537,9 @@ body.sidebar-open .hamburger-btn .bar:nth-child(3) {
         <div class="hero-eyebrow">PRIVATE EVENTS</div>
         <h1 class="hero-title">ELEVATE YOUR EVENT</h1>
         <p class="hero-subtitle">Vegas' most spectacular rooftop venue. Under the Eiffel Tower, overlooking the Bellagio Fountains. From intimate dinners to grand receptions, create unforgettable moments on the Strip.</p>
+        <div class="hero-ctas">
+          <a href="#contact" class="hero-cta">GET STARTED</a>
+        </div>
       </div>
     </section>
 
